@@ -55,14 +55,19 @@ public class Main {
                 case 3:
                     System.out.println("Informe o valor de deseja tranferir: ");
                     double valorTransferir = scanner.nextDouble();
-                    saldoInicial -= valorTransferir;
+                    if (saldoInicial < valorTransferir) {
+                        System.out.println("Você não tem saldo suficiente!");
+                        break;
+                    } else {
+                        saldoInicial -= valorTransferir;
 
-                    saldoAtualizado = String.format("""
-                            Saldo atualizado R$ %.2f
-                            """, saldoInicial);
+                        saldoAtualizado = String.format("""
+                                Saldo atualizado R$ %.2f
+                                """, saldoInicial);
 
-                    System.out.println(saldoAtualizado);
-                    break;
+                        System.out.println(saldoAtualizado);
+                        break;
+                    }
                 case 4:
                     System.out.println("Saindo...");
                     break;
