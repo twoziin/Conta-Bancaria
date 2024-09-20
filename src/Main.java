@@ -36,8 +36,8 @@ public class Main {
                     """;
             System.out.println(operacoes);
             int escolha = scanner.nextInt();
-
-            switch (escolha) {
+            String saldoAtualizado;
+            switch(escolha) {
                 case 1:
                     System.out.println("O saldo atual é R$ " + saldoInicial);
                     break;
