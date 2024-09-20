@@ -72,7 +72,7 @@ public class Main {
                     System.out.println("Saindo...");
                     break;
             }
-            if (escolha >= 5) {
+            if(escolha > 4 || escolha < 1) {
                 System.out.println("Escolha inválida. Por favor, escolha uma opção valida.");
             } else if(escolha == 4) break;
         }
