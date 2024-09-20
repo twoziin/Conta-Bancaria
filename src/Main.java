@@ -10,7 +10,7 @@ public class Main {
 
         String dadosCliente = String.format("""
                 ***********************
-                  
+                
                 Dados iniciais do cliente:
 
                 Nome: %s
@@ -52,16 +52,14 @@ public class Main {
                                 Saldo atualizado R$ %.2f
                                 """, saldoInicial);
 
-                    System.out.println(saldoAtualizado);
                         System.out.println(saldoAtualizado);
                     }
                     break;
                 case 3:
                     System.out.print("Informe o valor de deseja transferir: ");
                     double valorTransferir = scanner.nextDouble();
-                    if (saldoInicial < valorTransferir) {
+                    if(saldoInicial < valorTransferir) {
                         System.out.println("Você não tem saldo suficiente!");
-                        break;
                     } else {
                         saldoInicial -= valorTransferir;
 
@@ -70,8 +68,8 @@ public class Main {
                                 """, saldoInicial);
 
                         System.out.println(saldoAtualizado);
-                        break;
                     }
+                    break;
                 case 4:
                     System.out.println("Saindo...");
                     break;
