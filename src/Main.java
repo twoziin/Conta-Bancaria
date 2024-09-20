@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String nomeCliente = "Jacqueline Oliveira";
+        String tipoConta = "Corrente";
+        double saldoInicial = 2500.00;
+
+        Scanner scanner = new Scanner(System.in);
+
+            String dadosCliente = String.format("""
+                    ***********************
+                    
+                    Dados iniciais do cliente:
+                    
+                    Nome: %s
+                    Tipo conta: %s
+                    Saldo inicial: R$ %.2f
+                    
+                    ***********************
+                    """, nomeCliente, tipoConta, saldoInicial);
+
+            System.out.println(dadosCliente);
+
+        for (; ;) {
+            String operacoes = """
+                    
+                    Operações
+                    
+                    1- Consultar saldos
+                    2- Receber valor
+                    3- Transferir valor
+                    4- Sair
+                    
+                    Digite a opção desejada:
+                    """;
+            System.out.println(operacoes);
+            int escolha = scanner.nextInt();
+
+            switch (escolha) {
+                case 1:
+                    System.out.println("O saldo atual é R$ " + saldoInicial);
+                    break;
+                case 2:
+                    System.out.println("Informe o valor a receber: ");
+                    double valorReceber = scanner.nextDouble();
+                    saldoInicial += valorReceber;
+
+                    String saldoAtualizado = String.format( """
+                            Saldo atualizado R$ %.2f
+                            """, saldoInicial);
+
+                    System.out.println(saldoAtualizado);
+                    break;
+                case 3:
+                    System.out.println("Informe o valor de deseja tranferir: ");
+                    double valorTransferir = scanner.nextDouble();
+                    saldoInicial -= valorTransferir;
+
+                    saldoAtualizado = String.format("""
+                            Saldo atualizado R$ %.2f
+                            """, saldoInicial);
+
+                    System.out.println(saldoAtualizado);
+                    break;
+                case 4:
+                    System.out.println("Saindo...");
+                    break;
+            }
+            if (escolha >= 5) {
+                System.out.println("Escolha inválida. Por favor, escolha uma opção valida.");
+            } else if(escolha == 4) break;
+        }
+    }
+}
