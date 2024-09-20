@@ -8,30 +8,30 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-            String dadosCliente = String.format("""
-                    ***********************
-                    
-                    Dados iniciais do cliente:
-                    
-                    Nome: %s
-                    Tipo conta: %s
-                    Saldo inicial: R$ %.2f
-                    
-                    ***********************
-                    """, nomeCliente, tipoConta, saldoInicial);
+        String dadosCliente = String.format("""
+                ***********************
+                  
+                Dados iniciais do cliente:
 
-            System.out.println(dadosCliente);
+                Nome: %s
+                Tipo conta: %s
+                Saldo inicial: R$ %.2f
+
+                ***********************
+                """, nomeCliente, tipoConta, saldoInicial);
+
+        System.out.println(dadosCliente);
 
         for (; ;) {
             String operacoes = """
                     
                     Operações
-                    
-                    1- Consultar saldos
-                    2- Receber valor
-                    3- Transferir valor
-                    4- Sair
-                    
+           
+                    1 - Consultar saldos
+                    2 - Receber valor
+                    3 - Transferir valor
+                    4 - Sair
+        
                     Digite a opção desejada:
                     """;
             System.out.println(operacoes);
